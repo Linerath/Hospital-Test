@@ -2,7 +2,7 @@
 using Flurl;
 
 const int PatientsCount = 100;
-string endpointUrl = new Url("http://localhost:5280/api/patients");
+string endpointUrl = new Url("http://localhost:8080/api/patients");
 
 Console.WriteLine("Press [Enter] to seed patients");
 var keyInfo = Console.ReadKey();
