@@ -54,8 +54,10 @@ public class PatientRepository : IPatientRepository
             var date = searchParam.Date;
             patientsQuery = searchParam.Operator switch
             {
-                DateTimeSearchOperator.Equal => patientsQuery.Where(p => p.Birthdate == date),
-                DateTimeSearchOperator.NotEqual => patientsQuery.Where(p => p.Birthdate != date),
+                DateTimeSearchOperator.Equal => patientsQuery.Where(p =>
+                    p.Birthdate.Year == date.Year && p.Birthdate.Month == date.Month && p.Birthdate.Day == date.Day),
+                DateTimeSearchOperator.NotEqual => patientsQuery.Where(p =>
+                    !(p.Birthdate.Year == date.Year && p.Birthdate.Month == date.Month && p.Birthdate.Day == date.Day)),
                 DateTimeSearchOperator.LessThan => patientsQuery.Where(p => p.Birthdate < date),
                 DateTimeSearchOperator.GreaterThan => patientsQuery.Where(p => p.Birthdate > date),
                 DateTimeSearchOperator.GreaterOrEqual => patientsQuery.Where(p => p.Birthdate >= date),
