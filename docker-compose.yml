@@ -1,0 +1,20 @@
+services:
+  web:
+    image: ${DOCKER_REGISTRY-}web
+    container_name: hospital.api
+    build:
+      context: .
+      dockerfile: src/Web/Dockerfile
+    ports:
+        - "8080:8080"
+
+  hospital.database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: hospital.database
+    volumes:
+      - ./data:/var/opt/mssql/data
+    environment:
+      - ACCEPT_EULA='Y'
+      - SA_PASSWORD=1StrongPwd!!
+    ports:
+      - "1433:1433"

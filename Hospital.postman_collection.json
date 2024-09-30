@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "9383caa5-9741-43d7-b799-55a990e8d056",
+		"name": "Hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3313607"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": {\r\n        \"id\": \"d0602361-1d52-4288-d120-08dce1609803\",\r\n        \"use\": \"unofficial\",\r\n        \"family\": \"fam\",\r\n        \"given\": [\r\n            \"baby\",\r\n            \"babovich\"\r\n        ]\r\n    },\r\n    \"gender\": \"Male\",\r\n    \"birthdate\": \"2024-09-25T22:10:02.2676379\",\r\n    \"active\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients?id=d0602361-1d52-4288-d120-08dce1609803",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "d0602361-1d52-4288-d120-08dce1609803"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": {\r\n        \"id\": \"d0602361-1d52-4288-d120-08dce1609803\",\r\n        \"use\": \"unofficial\",\r\n        \"family\": \"fam upd\",\r\n        \"given\": [\r\n            \"baby upd\",\r\n            \"babovich upd\"\r\n        ]\r\n    },\r\n    \"gender\": \"Female\",\r\n    \"birthdate\": \"2024-09-29T23:41:32.4077725\",\r\n    \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients?id=D0602361-1D52-4288-D120-08DCE1609803",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "D0602361-1D52-4288-D120-08DCE1609803"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients/search?date=gt2024-09-15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "gt2024-09-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients/search?date=lt2024-09-30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "lt2024-09-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients/search?date=ge2024-09-15&date=le2024-09-30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "ge2024-09-15"
+						},
+						{
+							"key": "date",
+							"value": "le2024-09-30"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
