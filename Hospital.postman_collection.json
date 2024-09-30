@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9383caa5-9741-43d7-b799-55a990e8d056",
+		"_postman_id": "176c8158-04ae-435f-8035-0f93084413d7",
 		"name": "Hospital",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3313607"
@@ -117,7 +117,7 @@
 			"response": []
 		},
 		{
-			"name": "search1",
+			"name": "search_gt",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -144,7 +144,7 @@
 			"response": []
 		},
 		{
-			"name": "search2",
+			"name": "search_lt",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -171,7 +171,7 @@
 			"response": []
 		},
 		{
-			"name": "search3",
+			"name": "search_ge_le",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -195,6 +195,72 @@
 						{
 							"key": "date",
 							"value": "le2024-09-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_ne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients/search?date=ne2024-09-01&date=ne2024-09-02&date=ne2024-09-03&date=ne2024-09-04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "ne2024-09-01"
+						},
+						{
+							"key": "date",
+							"value": "ne2024-09-02"
+						},
+						{
+							"key": "date",
+							"value": "ne2024-09-03"
+						},
+						{
+							"key": "date",
+							"value": "ne2024-09-04"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_eq",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients/search?date=eq2024-09-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "eq2024-09-01"
 						}
 					]
 				}
